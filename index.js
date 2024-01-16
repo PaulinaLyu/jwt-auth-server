@@ -13,8 +13,11 @@ app.use(cookieParser());
 app.use(cors());
 
 const start = async () => {
+  console.log(1);
   try {
+    console.log(2);
     await mongoose.connect(process.env.DB_URL);
+    console.log(3);
     app.listen(PORT, () => console.log(`Server started on PORT = ${PORT}`));
   } catch (e) {
     console.log(e);
